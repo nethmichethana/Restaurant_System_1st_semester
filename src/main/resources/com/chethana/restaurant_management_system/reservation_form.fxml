@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.chethana.restaurant_management_system.controllers.ReservationFormController"
+      spacing="15"
+      style="-fx-padding: 20; -fx-background-color: white;">
+
+    <Label text="📅 Reservation Information"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+    <GridPane hgap="10" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" prefWidth="130"/>
+            <ColumnConstraints hgrow="ALWAYS" prefWidth="250"/>
+        </columnConstraints>
+
+        <Label text="Customer *" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="customerComboBox"
+                  promptText="Select Customer"
+                  GridPane.rowIndex="0"
+                  GridPane.columnIndex="1"/>
+
+        <Label text="Reservation Date *" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="reservationDatePicker"
+                    GridPane.rowIndex="1"
+                    GridPane.columnIndex="1"/>
+
+        <Label text="Reservation Time *" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="reservationTimeField"
+                   promptText="HH:mm (e.g. 18:30)"
+                   GridPane.rowIndex="2"
+                   GridPane.columnIndex="1"/>
+
+        <Label text="No of Guests *" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Spinner fx:id="guestSpinner"
+                 GridPane.rowIndex="3"
+                 GridPane.columnIndex="1"/>
+
+        <Label text="Status" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="statusComboBox"
+                  GridPane.rowIndex="4"
+                  GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton"
+                text="💾 Save"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+                onAction="#handleSave"/>
+
+        <Button fx:id="cancelButton"
+                text="❌ Cancel"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+                onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>

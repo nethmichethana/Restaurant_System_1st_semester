@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="514.0" prefWidth="730.0" spacing="15" style="-fx-padding: 20; -fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chethana.restaurant_management_system.controllers.Payment_formController">
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="💸 Payment Information" />
+
+    <GridPane hgap="10" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" prefWidth="120.0" />
+            <ColumnConstraints hgrow="ALWAYS" prefWidth="250.0" />
+         <ColumnConstraints />
+        </columnConstraints>
+
+        <Label text="Payment ID *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+        <Label text="Order ID *" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <ComboBox fx:id="cmbCustomer" prefHeight="29.0" prefWidth="221.0" promptText="Select customer" />
+        </HBox>
+
+        <Label text="Method" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+      <TextField fx:id="txtPaymentId" promptText="PI001" GridPane.columnIndex="1" />
+      <TextField fx:id="txtOrderId" promptText="OD001" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Customer *" GridPane.rowIndex="2" />
+      <ComboBox fx:id="cmbMethod" prefHeight="29.0" prefWidth="215.0" promptText="Select payment Method" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text=" Amount(RS)" GridPane.rowIndex="5" />
+      <Label text="Payment Date *" GridPane.rowIndex="6" />
+      <DatePicker fx:id="dpPaymentDate" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <TextField fx:id="txtAmount" prefHeight="34.0" prefWidth="550.0" promptText="Rs. 0.00" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      </rowConstraints>
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Button fx:id="saveButton" onAction="#handleAddPayment" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;" text="💾 Add Payment" />
+        <Button fx:id="cancelButton" onAction="#handleCancel" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;" text="❌ Cancel" />
+    </HBox>
+
+</VBox>

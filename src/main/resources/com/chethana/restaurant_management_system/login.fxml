@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.chethana.restaurant_management_system.controllers.LoginController"
+            style="-fx-background-color: linear-gradient(to bottom right, #dbeafe, #eff6ff, #f0f9ff);">
+
+    <!-- Main Container -->
+    <StackPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+               AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <HBox alignment="CENTER" spacing="0" style="-fx-padding: 20;">
+
+            <!-- Left Side - Branding (Hidden on small screens via controller) -->
+            <VBox fx:id="brandingSection" alignment="CENTER" spacing="30"
+                  style="-fx-background-color: white; -fx-background-radius: 20 0 0 20; -fx-padding: 60 80; -fx-border-color: #e2e8f0; -fx-border-width: 1 0 1 1; -fx-border-radius: 20 0 0 20; -fx-min-width: 400; -fx-max-width: 400;"
+                  HBox.hgrow="NEVER">
+
+                <!-- Logo -->
+                <VBox alignment="CENTER" spacing="15">
+                    <Label text="🍽️" style="-fx-font-size: 72px;" />
+                    <Label text="Restaurant"
+                           style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" />
+                    <Label text="Management System"
+                           style="-fx-font-size: 16px; -fx-text-fill: #64748b; -fx-font-weight: 500;" />
+                </VBox>
+
+                <!-- Features List -->
+                <VBox spacing="20" style="-fx-padding: 20 0;">
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="✓" style="-fx-font-size: 20px; -fx-text-fill: #3b82f6; -fx-font-weight: bold;" />
+                        <VBox spacing="2">
+                            <Label text="Easy Order Management"
+                                   style="-fx-font-size: 14px; -fx-text-fill: #1e293b; -fx-font-weight: 600;" />
+                            <Label text="Track orders in real-time"
+                                   style="-fx-font-size: 12px; -fx-text-fill: #64748b;" />
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="✓" style="-fx-font-size: 20px; -fx-text-fill: #3b82f6; -fx-font-weight: bold;" />
+                        <VBox spacing="2">
+                            <Label text="Staff And Inventory Control"
+                                   style="-fx-font-size: 14px; -fx-text-fill: #1e293b; -fx-font-weight: 600;" />
+                            <Label text="Complete management solution"
+                                   style="-fx-font-size: 12px; -fx-text-fill: #64748b;" />
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="✓" style="-fx-font-size: 20px; -fx-text-fill: #3b82f6; -fx-font-weight: bold;" />
+                        <VBox spacing="2">
+                            <Label text="Detailed Analytics"
+                                   style="-fx-font-size: 14px; -fx-text-fill: #1e293b; -fx-font-weight: 600;" />
+                            <Label text="Make data-driven decisions"
+                                   style="-fx-font-size: 12px; -fx-text-fill: #64748b;" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+            </VBox>
+
+            <!-- Right Side - Login Form -->
+            <VBox alignment="CENTER" spacing="30"
+                  style="-fx-background-color: white; -fx-background-radius: 0 20 20 0; -fx-padding: 60 60; -fx-border-color: #e2e8f0; -fx-border-width: 1 1 1 0; -fx-border-radius: 0 20 20 0; -fx-min-width: 450; -fx-max-width: 500;"
+                  HBox.hgrow="ALWAYS">
+
+                <!-- Welcome Text -->
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="Welcome Back!"
+                           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" />
+                    <Label text="Please login to your account"
+                           style="-fx-font-size: 14px; -fx-text-fill: #64748b;" />
+                </VBox>
+
+                <!-- Login Form -->
+                <VBox spacing="20" maxWidth="380" style="-fx-padding: 0;">
+
+                    <!-- Username Field -->
+                    <VBox spacing="8">
+                        <Label text="Username"
+                               style="-fx-font-weight: 600; -fx-text-fill: #334155; -fx-font-size: 14px;" />
+                        <TextField fx:id="usernameField"
+                                   promptText="Enter your username"
+                                   style="-fx-padding: 14 16; -fx-font-size: 14px; -fx-background-color: #f8fafc; -fx-text-fill: #1e293b; -fx-prompt-text-fill: #94a3b8; -fx-background-radius: 10; -fx-border-color: #cbd5e1; -fx-border-width: 1.5; -fx-border-radius: 10;" />
+                    </VBox>
+
+                    <!-- Password Field -->
+                    <VBox spacing="8">
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="Password"
+                                   style="-fx-font-weight: 600; -fx-text-fill: #334155; -fx-font-size: 14px;" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Hyperlink text="Forgot Password?"
+                                       style="-fx-text-fill: #3b82f6; -fx-font-size: 12px; -fx-padding: 0;" />
+                        </HBox>
+                        <PasswordField fx:id="passwordField"
+                                       promptText="Enter your password"
+                                       style="-fx-padding: 14 16; -fx-font-size: 14px; -fx-background-color: #f8fafc; -fx-text-fill: #1e293b; -fx-prompt-text-fill: #94a3b8; -fx-background-radius: 10; -fx-border-color: #cbd5e1; -fx-border-width: 1.5; -fx-border-radius: 10;" />
+                    </VBox>
+
+                    <!-- Remember Me Checkbox -->
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <CheckBox text="Remember me"
+                                  style="-fx-text-fill: #475569; -fx-font-size: 13px;" />
+                    </HBox>
+
+                    <!-- Login Button -->
+                    <Button fx:id="loginButton"
+                            text="LOGIN"
+                            maxWidth="Infinity"
+                            style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-padding: 16; -fx-background-radius: 10; -fx-cursor: hand; -fx-border-width: 0;"
+                            onAction="#handleLogin"
+                            defaultButton="true" />
+
+                    <!-- Divider -->
+                    <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10 0;">
+                        <Separator HBox.hgrow="ALWAYS" style="-fx-background-color: #e2e8f0;" />
+                        <Label text="OR" style="-fx-text-fill: #94a3b8; -fx-font-size: 12px;" />
+                        <Separator HBox.hgrow="ALWAYS" style="-fx-background-color: #e2e8f0;" />
+                    </HBox>
+
+                    <!-- Quick Login Options -->
+                    <HBox spacing="12" alignment="CENTER">
+                        <Button text="👤 Admin"
+                                style="-fx-background-color: #eff6ff; -fx-text-fill: #3b82f6; -fx-font-size: 13px; -fx-font-weight: 600; -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0;"
+                                onAction="#quickLoginAdmin" />
+                        <Button text="👨‍🍳 Staff"
+                                style="-fx-background-color: #eff6ff; -fx-text-fill: #3b82f6; -fx-font-size: 13px; -fx-font-weight: 600; -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0;"
+                                onAction="#quickLoginStaff" />
+                        <Button text="👤 Guest"
+                                style="-fx-background-color: #eff6ff; -fx-text-fill: #3b82f6; -fx-font-size: 13px; -fx-font-weight: 600; -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0;"
+                                onAction="#quickLoginGuest" />
+                    </HBox>
+
+                </VBox>
+
+                <!-- Footer -->
+                <VBox alignment="CENTER" spacing="8" style="-fx-padding: 20 0 0 0;">
+                    <Label text="© 2026 Restaurant Management System"
+                           style="-fx-text-fill: #94a3b8; -fx-font-size: 12px;" />
+                    <HBox spacing="15" alignment="CENTER">
+                        <Hyperlink text="Terms" style="-fx-text-fill: #3b82f6; -fx-font-size: 12px;" />
+                        <Label text="•" style="-fx-text-fill: #cbd5e1;" />
+                        <Hyperlink text="Privacy" style="-fx-text-fill: #3b82f6; -fx-font-size: 12px;" />
+                        <Label text="•" style="-fx-text-fill: #cbd5e1;" />
+                        <Hyperlink text="Support" style="-fx-text-fill: #3b82f6; -fx-font-size: 12px;" />
+                    </HBox>
+                </VBox>
+
+            </VBox>
+
+        </HBox>
+
+    </StackPane>
+
+</AnchorPane>

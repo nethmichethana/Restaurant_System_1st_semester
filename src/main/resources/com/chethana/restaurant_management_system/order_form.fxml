@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.chethana.restaurant_management_system.controllers.OrderFormController"
+      spacing="15" style="-fx-padding: 20; -fx-background-color: white;">
+
+    <Label text="📝 Create New Order" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+    <GridPane hgap="10" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" prefWidth="120" />
+            <ColumnConstraints hgrow="ALWAYS" prefWidth="250" />
+        </columnConstraints>
+
+        <Label text="Customer *" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <ComboBox fx:id="customerCombo" promptText="Select customer" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Waiter *" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <ComboBox fx:id="waiterCombo" promptText="Select waiter" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Menu Items" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <ComboBox fx:id="menuItemCombo" promptText="Select item" prefWidth="200" />
+            <TextField fx:id="quantityField" promptText="Qty" prefWidth="60" />
+            <Button text="➕ Add" onAction="#handleAddItem" />
+        </HBox>
+
+        <Label text="Selected Items" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TableView fx:id="itemsTable" prefHeight="150" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                   GridPane.columnSpan="2">
+            <columns>
+                <TableColumn fx:id="colItemName" text="Item" prefWidth="150" />
+                <TableColumn fx:id="colItemQty" text="Quantity" prefWidth="80" />
+                <TableColumn fx:id="colItemPrice" text="Price" prefWidth="80" />
+                <TableColumn fx:id="colItemTotal" text="Total" prefWidth="80" />
+                <TableColumn fx:id="colItemAction" text="Action" prefWidth="80" />
+            </columns>
+        </TableView>
+
+        <Label text="Total Amount" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <Label fx:id="totalAmountLabel" text="Rs. 0.00"
+               style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"
+               GridPane.rowIndex="4" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton" text="💾 Place Order"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+                onAction="#handleSave" />
+        <Button fx:id="cancelButton" text="❌ Cancel"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+                onAction="#handleCancel" />
+    </HBox>
+
+</VBox>

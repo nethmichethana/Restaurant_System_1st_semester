@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.chethana.restaurant_management_system.controllers.StaffController">
+
+    <top>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label text="👥 Staff Management" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="➕ Add New Staff" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+                        onAction="#handleAddStaff" />
+                <Button text="✏️ Edit Selected" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+                        onAction="#handleEditStaff" />
+                <Button text="🗑️ Delete Selected" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+                        onAction="#handleDeleteStaff" />
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <TextField fx:id="searchField" promptText="Search staff..."
+                           style="-fx-padding: 10; -fx-pref-width: 200;"
+                           onKeyReleased="#handleSearch" />
+                <ComboBox fx:id="roleFilter" promptText="All Roles"
+                          style="-fx-pref-width: 150;"
+                          onAction="#handleSearch" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="staffTable" style="-fx-padding: 0 20 20 20;">
+            <columns>
+                <TableColumn fx:id="colStaffId" text="ID" prefWidth="50" />
+                <TableColumn fx:id="colStaffCode" text="Staff Code" prefWidth="100" />
+                <TableColumn fx:id="colName" text="Name" prefWidth="150" />
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="200" />
+                <TableColumn fx:id="colContact" text="Contact" prefWidth="120" />
+                <TableColumn fx:id="colRole" text="Role" prefWidth="100" />
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="80" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </center>
+
+</BorderPane>
